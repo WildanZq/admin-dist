@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.1.15
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="en">
+  <head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="Admin Panel">
+    <meta name="keyword" content="Admin,Dashboard">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Admin Panel</title>
+    <!-- Icons-->
+    <link href="node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+  </head>
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+    <header class="app-header navbar">
+      <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <h5 class="navbar-brand-full">Admin Panel</h5>
+        <h5 class="navbar-brand-minimized">AP</h5>
+      </a>
+      <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link mr-3 mr-md-4" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="icons d-block cui-account-logout"></i> Logout
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">
+              <i class="fa fa-user"></i> Profile</a>
+            <a class="dropdown-item" href="#">
+              <i class="fa fa-lock"></i> Logout</a>
+          </div>
+        </li>
+      </ul>
+    </header>
+    <div class="app-body">
+      <div class="sidebar">
+        <nav class="sidebar-nav">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.html">
+                <i class="nav-icon icon-speedometer"></i> Dashboard
+              </a>
+            </li>
+            <li class="nav-title">Bisnis</li>
+            <li class="nav-item nav-dropdown">
+              <a class="nav-link nav-dropdown-toggle" href="#">
+                <i class="nav-icon icon-home"></i> Mitra 1</a>
+              <ul class="nav-dropdown-items">
+                <li class="nav-item">
+                  <a class="nav-link" href="overview.html" target="_top">
+                    <i class="nav-icon icon-chart"></i> Overview</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="stok.html" target="_top">
+                    <i class="nav-icon icon-grid"></i> Stok</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="pemasukan.html" target="_top">
+                    <i class="nav-icon cui-chevron-bottom"></i> Pemasukan</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="pengeluaran.html" target="_top">
+                    <i class="nav-icon cui-chevron-top"></i> Pengeluaran</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="pengaturan.html" target="_top">
+                    <i class="nav-icon icon-settings"></i> Pengaturan</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item nav-dropdown">
+              <a class="nav-link nav-dropdown-toggle" href="#">
+                <i class="nav-icon icon-home"></i> Mitra 2</a>
+              <ul class="nav-dropdown-items">
+                <li class="nav-item">
+                  <a class="nav-link" href="overview.html" target="_top">
+                    <i class="nav-icon icon-chart"></i> Overview</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="stok.html" target="_top">
+                    <i class="nav-icon icon-grid"></i> Stok</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="pemasukan.html" target="_top">
+                    <i class="nav-icon cui-chevron-bottom"></i> Pemasukan</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="pengeluaran.html" target="_top">
+                    <i class="nav-icon cui-chevron-top"></i> Pengeluaran</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="pengaturan.html" target="_top">
+                    <i class="nav-icon icon-settings"></i> Pengaturan</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-title">Pengaturan</li>
+            <li class="nav-item">
+              <a class="nav-link" href="admin.html">
+                <i class="nav-icon icon-user"></i> Akun Admin</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+      </div>
+      <main class="main">
+        <div class="container-fluid">
+          <div class="animated fadeIn"></div>
+        </div>
+      </main>
+    </div>
+    <!-- CoreUI and necessary plugins-->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/pace-progress/pace.min.js"></script>
+    <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+    <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
+  </body>
+</html>
