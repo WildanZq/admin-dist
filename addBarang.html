@@ -26,7 +26,6 @@
   <!-- Main styles for this application-->
   <link href="css/style.min.css" rel="stylesheet">
   <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
-  <link href="vendors/datatables/css/chart.min.css" rel="stylesheet">
   <link href="vendors/toastr/css/toastr.css" rel="stylesheet">
 </head>
 
@@ -143,49 +142,65 @@
           <a href="manage.html">Manajemen</a>
         </li>
         <li class="breadcrumb-item active">Tambah</li>
-        <li class="breadcrumb-menu">
-          <button class="btn" type="button" data-toggle="modal" data-target="#filterModal">
-            <i class="icons cui-list"></i> Filter
-          </button>
-        </li>
       </ol>
       <div class="container-fluid">
         <div class="animated fadeIn">
-          
-        </div>
-        <div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="filterModal"
-          aria-hidden="true">
-          <div class="modal-dialog modal-primary" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h4 class="modal-title">Filter Data</h4>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">×</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form action="" method="post">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Tambah Barang</h4>
+              <form action="" method="post" class="row">
+                <div class="col-md-6 col-12">
                   <div class="form-group">
-                    <label for="date-from">Dari</label>
-                    <input class="form-control" id="date-from" type="date" name="date-input" placeholder="date"
-                      value="2020-01-09">
+                    <label for="mitra">Pilih Mitra</label>
+                    <select class="form-control" id="mitra">
+                      <option>Mitra 1</option>
+                      <option>Mitra 2</option>
+                    </select>
                   </div>
                   <div class="form-group">
-                    <label for="date-to">Sampai</label>
-                    <input class="form-control" id="date-to" type="date" name="date-input" placeholder="date"
-                      value="2020-01-16">
+                    <label for="name">Nama Barang</label>
+                    <input class="form-control" id="name" type="text" name="name" placeholder="Pakan">
                   </div>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-                <button class="btn btn-primary" type="button">Simpan</button>
-              </div>
+                  <div class="form-group">
+                    <label for="qty">Jumlah</label>
+                    <input class="form-control" id="qty" type="number" name="qty" placeholder="5">
+                  </div>
+                </div>
+                <div class="col-md-6 col-12">
+                  <div class="form-group">
+                    <label for="buyPrice">Harga Jual</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Rp</span>
+                      </div>
+                      <input class="form-control" id="buyPrice" type="number" name="buyPrice" placeholder="100000">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="sellPrice">Harga Beli</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Rp</span>
+                      </div>
+                      <input class="form-control" id="sellPrice" type="number" name="sellPrice" placeholder="100000">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="unit">Satuan</label>
+                    <input class="form-control" id="unit" type="text" name="unit" placeholder="zak">
+                  </div>
+                </div>
+                <div class="col-12 d-flex justify-content-end">
+                  <a class="btn btn-secondary" href="manage.html">Batal</a>
+                  <button class="btn btn-primary ml-2" type="submit"><i class="icon-plus"></i> Tambah</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
-    </main>
+  </div>
+  </main>
   </div>
   <!-- CoreUI and necessary plugins-->
   <script src="vendors/jquery/dist/jquery.min.js"></script>
