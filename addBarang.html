@@ -26,7 +26,7 @@
   <!-- Main styles for this application-->
   <link href="css/style.min.css" rel="stylesheet">
   <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
-  <link href="vendors/datatables/css/datatables.min.css" rel="stylesheet">
+  <link href="vendors/datatables/css/chart.min.css" rel="stylesheet">
   <link href="vendors/toastr/css/toastr.css" rel="stylesheet">
 </head>
 
@@ -139,7 +139,10 @@
         <li class="breadcrumb-item">
           <a href="dashboard.html">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Manajemen</li>
+        <li class="breadcrumb-item">
+          <a href="manage.html">Manajemen</a>
+        </li>
+        <li class="breadcrumb-item active">Tambah</li>
         <li class="breadcrumb-menu">
           <button class="btn" type="button" data-toggle="modal" data-target="#filterModal">
             <i class="icons cui-list"></i> Filter
@@ -148,87 +151,7 @@
       </ol>
       <div class="container-fluid">
         <div class="animated fadeIn">
-          <div class="card">
-            <div class="card-body">
-              <div class="row mb-4 mt-2 px-4">
-                <div class="col-md-5 col-12">
-                  <h4 class="card-title mb-0">Manajemen</h4>
-                </div>
-                <div class="col-md-7 col-12 mt-md-0 mt-1">
-                  <a href="addBarang.html" class="btn btn-primary float-right">
-                    <i class="icon-plus"></i> Tambah
-                  </a>
-                  <div class="small text-muted float-md-right mr-md-3 mt-md-2">Januari 2019 - Juli 2019</div>
-                </div>
-              </div>
-              <table class="table table-responsive-lg table-striped" id="invTable">
-                <thead>
-                  <tr>
-                    <th>Tanggal</th>
-                    <th>Mitra</th>
-                    <th>Nama Barang</th>
-                    <th>Jumlah</th>
-                    <th>Harga Beli</th>
-                    <th>Harga Jual</th>
-                    <th>Total Beli</th>
-                    <th>Total Jual</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>01/02/2019</td>
-                    <td>Yiorgos Avraamu</td>
-                    <td>DOC</td>
-                    <td>1.000 ekor</td>
-                    <td>14.000</td>
-                    <td>14.500</td>
-                    <td>14.000.000</td>
-                    <td>14.500.000</td>
-                  </tr>
-                  <tr>
-                    <td>21/01/2019</td>
-                    <td>Avram Tarasios</td>
-                    <td>Pakan</td>
-                    <td>5 zak</td>
-                    <td>420.000</td>
-                    <td>425.000</td>
-                    <td>2.100.000</td>
-                    <td>2.125.000</td>
-                  </tr>
-                  <tr>
-                    <td>01/02/2019</td>
-                    <td>Quintin Ed</td>
-                    <td>Vit C</td>
-                    <td>1 bks</td>
-                    <td>80.000</td>
-                    <td>81.250</td>
-                    <td>80.000</td>
-                    <td>81.250</td>
-                  </tr>
-                  <tr>
-                    <td>01/03/2019</td>
-                    <td>Enéas Kwadwo</td>
-                    <td>Pakan</td>
-                    <td>5 zak</td>
-                    <td>420.000</td>
-                    <td>425.000</td>
-                    <td>2.100.000</td>
-                    <td>2.125.000</td>
-                  </tr>
-                  <tr>
-                    <td>21/01/2019</td>
-                    <td>Agapetus Tadeáš</td>
-                    <td>Pakan</td>
-                    <td>5 zak</td>
-                    <td>420.000</td>
-                    <td>425.000</td>
-                    <td>2.100.000</td>
-                    <td>2.125.000</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+          
         </div>
         <div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="filterModal"
           aria-hidden="true">
@@ -260,6 +183,8 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
     </main>
   </div>
   <!-- CoreUI and necessary plugins-->
@@ -270,9 +195,6 @@
   <script src="vendors/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
   <script src="vendors/toastr/js/toastr.min.js"></script>
   <script src="vendors/@coreui/coreui/dist/js/coreui.min.js"></script>
-  <!-- Plugins and scripts required by this view-->
-  <script src="vendors/datatables/js/datatables.min.js"></script>
-  <script src="js/datatables.js"></script>
 </body>
 
 </html>
