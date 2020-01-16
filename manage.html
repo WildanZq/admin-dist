@@ -136,84 +136,100 @@
     </div>
     <main class="main">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item active">Dashboard</li>
+        <li class="breadcrumb-item">
+          <a href="dashboard.html">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Manajemen</li>
         <li class="breadcrumb-menu">
           <button class="btn" type="button" data-toggle="modal" data-target="#filterModal">
             <i class="icons cui-list"></i> Filter
           </button>
-          <div class=" d-md-down-none btn-group btn-group-toggle float-md-right mr-3" data-toggle="buttons">
-            <label style="cursor: pointer;" class="btn btn-outline-secondary">
-              <input id="option1" type="radio" name="options" autocomplete="off"> Hari
-            </label>
-            <label style="cursor: pointer;" class="btn btn-outline-secondary active">
-              <input id="option2" type="radio" name="options" autocomplete="off" checked=""> Bulan
-            </label>
-            <label style="cursor: pointer;" class="btn btn-outline-secondary">
-              <input id="option3" type="radio" name="options" autocomplete="off"> Tahun
-            </label>
-          </div>
         </li>
       </ol>
       <div class="container-fluid">
         <div class="animated fadeIn">
           <div class="row">
-            <div class="col-sm-6 col-md-3">
-              <div class="card text-white bg-primary">
+            <div class="col-12">
+              <div class="card">
                 <div class="card-body">
-                  <div class="h1 text-muted text-right mb-4">
-                    <i class="icon-home"></i>
+                  <div class="row mb-4 mt-2 px-4">
+                    <div class="col-md-5 col-12">
+                      <h4 class="card-title mb-0">Manajemen</h4>
+                    </div>
+                    <div class="col-md-7 col-12 mt-md-0 mt-1">
+                      <a href="#" class="btn btn-primary float-right">
+                        <i class="icon-plus"></i> Tambah
+                      </a>
+                      <div class="small text-muted float-md-right mr-md-3 mt-md-2">Januari 2019 - Juli 2019</div>
+                    </div>
                   </div>
-                  <div class="text-value">2</div>
-                  <small class="text-muted text-uppercase font-weight-bold">Mitra Bisnis</small>
+                  <table class="table table-responsive-lg table-striped" id="invTable">
+                    <thead>
+                      <tr>
+                        <th>Tanggal</th>
+                        <th>Mitra</th>
+                        <th>Nama Barang</th>
+                        <th>Jumlah</th>
+                        <th>Harga Beli</th>
+                        <th>Harga Jual</th>
+                        <th>Total Beli</th>
+                        <th>Total Jual</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>01/02/2019</td>
+                        <td>Yiorgos Avraamu</td>
+                        <td>DOC</td>
+                        <td>1.000 ekor</td>
+                        <td>14.000</td>
+                        <td>14.500</td>
+                        <td>14.000.000</td>
+                        <td>14.500.000</td>
+                      </tr>
+                      <tr>
+                        <td>21/01/2019</td>
+                        <td>Avram Tarasios</td>
+                        <td>Pakan</td>
+                        <td>5 zak</td>
+                        <td>420.000</td>
+                        <td>425.000</td>
+                        <td>2.100.000</td>
+                        <td>2.125.000</td>
+                      </tr>
+                      <tr>
+                        <td>01/02/2019</td>
+                        <td>Quintin Ed</td>
+                        <td>Vit C</td>
+                        <td>1 bks</td>
+                        <td>80.000</td>
+                        <td>81.250</td>
+                        <td>80.000</td>
+                        <td>81.250</td>
+                      </tr>
+                      <tr>
+                        <td>01/03/2019</td>
+                        <td>Enéas Kwadwo</td>
+                        <td>Pakan</td>
+                        <td>5 zak</td>
+                        <td>420.000</td>
+                        <td>425.000</td>
+                        <td>2.100.000</td>
+                        <td>2.125.000</td>
+                      </tr>
+                      <tr>
+                        <td>21/01/2019</td>
+                        <td>Agapetus Tadeáš</td>
+                        <td>Pakan</td>
+                        <td>5 zak</td>
+                        <td>420.000</td>
+                        <td>425.000</td>
+                        <td>2.100.000</td>
+                        <td>2.125.000</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <div class="card text-white bg-success">
-                <div class="card-body">
-                  <div class="h1 text-muted text-right mb-4">
-                    <i class="cui-chevron-bottom"></i>
-                  </div>
-                  <div class="text-value">Rp31.000.000</div>
-                  <small class="text-muted text-uppercase font-weight-bold">Total Pemasukan</small>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <div class="card text-white bg-danger">
-                <div class="card-body">
-                  <div class="h1 text-muted text-right mb-4">
-                    <i class="cui-chevron-top"></i>
-                  </div>
-                  <div class="text-value">Rp8.000.000</div>
-                  <small class="text-muted text-uppercase font-weight-bold">Total Pengeluaran</small>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <div class="card text-white bg-warning">
-                <div class="card-body">
-                  <div class="h1 text-muted text-right mb-4">
-                    <i class="icon-basket-loaded"></i>
-                  </div>
-                  <div class="text-value">1238</div>
-                  <small class="text-muted text-uppercase font-weight-bold">Barang Terjual</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-5 col-12">
-                  <h4 class="card-title mb-0">Pendapatan</h4>
-                </div>
-                <div class="col-md-7 col-12 mt-md-0 mt-1">
-                  <div class="small text-muted float-md-right">Januari 2019 - Juli 2019</div>
-                </div>
-              </div>
-              <div class="chart-wrapper" style="height:300px;margin-top:40px;">
-                <canvas class="chart" id="main-chart" height="300"></canvas>
               </div>
             </div>
           </div>
@@ -261,9 +277,8 @@
   <script src="vendors/toastr/js/toastr.min.js"></script>
   <script src="vendors/@coreui/coreui/dist/js/coreui.min.js"></script>
   <!-- Plugins and scripts required by this view-->
-  <script src="vendors/chart.js/dist/Chart.min.js"></script>
-  <script src="vendors/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="vendors/datatables/js/datatables.min.js"></script>
+  <script src="js/datatables.js"></script>
 </body>
 
 </html>
