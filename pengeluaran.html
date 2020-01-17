@@ -26,6 +26,7 @@
   <!-- Main styles for this application-->
   <link href="css/style.min.css" rel="stylesheet">
   <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+  <link href="vendors/datatables/css/datatables.min.css" rel="stylesheet">
   <link href="vendors/toastr/css/toastr.css" rel="stylesheet">
 </head>
 
@@ -130,46 +131,161 @@
         <li class="breadcrumb-item">
           <a href="overview.html">Mitra</a>
         </li>
-        <li class="breadcrumb-item active">Pengaturan</li>
+        <li class="breadcrumb-item active">Pengeluaran</li>
+        <li class="breadcrumb-menu">
+          <button class="btn" type="button" data-toggle="modal" data-target="#filterModal">
+            <i class="icons cui-list"></i> Filter
+          </button>
+        </li>
       </ol>
       <div class="container-fluid">
         <div class="animated fadeIn">
           <div class="row">
-            <div class="col-md-6 col-12">
-              <div class="card">
+            <div class="col-sm-6 col-md-3">
+              <div class="card text-white bg-success">
                 <div class="card-body">
-                  <h4 class="card-title">Pengaturan Mitra</h4>
-                  <form action="" method="post">
-                    <div class="form-group">
-                      <label for="mitraName">Nama Mitra</label>
-                      <input class="form-control" id="mitraName" type="text" name="mitraName" placeholder="Sujito">
-                    </div>
-                    <div class="form-group">
-                      <label for="population">Populasi</label>
-                      <input class="form-control" id="population" type="number" name="population" placeholder="1000">
-                    </div>
-                    <div class="form-group">
-                      <label for="percentage">Bagi Hasil</label>
-                      <div class="input-group">
-                        <input class="form-control" id="percentage" type="number" name="percentage" placeholder="25"
-                          min="0" max="100">
-                        <div class="input-group-append">
-                          <span class="input-group-text">%</span>
-                        </div>
-                      </div>
-                      <span class="help-block">Persentase keuntungan yang diambil</span>
-                    </div>
-                    <div class="d-flex justify-content-end">
-                      <a class="btn btn-secondary" href="dashboard.html">Batal</a>
-                      <a class="btn btn-primary ml-2" href="dashboard.html"><i class="fa fa-floppy-o"></i> Simpan</a>
-                    </div>
-                  </form>
+                  <div class="h1 text-muted text-right mb-4">
+                    <i class="fa fa-cutlery"></i>
+                  </div>
+                  <div class="text-value">Rp17.000.000</div>
+                  <small class="text-muted text-uppercase font-weight-bold">Total Pakan</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="card text-white bg-warning">
+                <div class="card-body">
+                  <div class="h1 text-muted text-right mb-4">
+                    <i class="icon-drop"></i>
+                  </div>
+                  <div class="text-value">Rp14.500.000</div>
+                  <small class="text-muted text-uppercase font-weight-bold">Total DOC</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="card text-white bg-primary">
+                <div class="card-body">
+                  <div class="h1 text-muted text-right mb-4">
+                    <i class="fa fa-plus"></i>
+                  </div>
+                  <div class="text-value">Rp2.505.151</div>
+                  <small class="text-muted text-uppercase font-weight-bold">Total Obat</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="card text-white bg-danger">
+                <div class="card-body">
+                  <div class="h1 text-muted text-right mb-4">
+                    <i class="cui-chevron-top"></i>
+                  </div>
+                  <div class="text-value">Rp34.000.151</div>
+                  <small class="text-muted text-uppercase font-weight-bold">Total Pengeluaran</small>
                 </div>
               </div>
             </div>
           </div>
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex mb-4 mt-2">
+                <div class="flex-grow-1">
+                  <h4 class="card-title mb-0">Pengeluaran</h4>
+                  <div class="small text-muted">Januari 2019 - Juli 2019</div>
+                </div>
+                <div>
+                  <a href="addExpense.html" class="btn btn-primary float-right">
+                    <i class="icon-plus"></i> Tambah
+                  </a>
+                </div>
+              </div>
+              <table class="table table-responsive-lg table-striped" id="invTable">
+                <thead>
+                  <tr>
+                    <th>Tanggal</th>
+                    <th>Jenis</th>
+                    <th>Nama Barang</th>
+                    <th>Jumlah</th>
+                    <th>Harga</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>01/02/2019</td>
+                    <td>DOC</td>
+                    <td>DOC</td>
+                    <td>1.000 ekor</td>
+                    <td>14.500</td>
+                    <td>14.500.000</td>
+                  </tr>
+                  <tr>
+                    <td>21/01/2019</td>
+                    <td>Pakan</td>
+                    <td>Pakan</td>
+                    <td>5 zak</td>
+                    <td>425.000</td>
+                    <td>2.125.000</td>
+                  </tr>
+                  <tr>
+                    <td>01/02/2019</td>
+                    <td>Obat</td>
+                    <td>Vit C</td>
+                    <td>1 bks</td>
+                    <td>81.250</td>
+                    <td>81.250</td>
+                  </tr>
+                  <tr>
+                    <td>01/03/2019</td>
+                    <td>Pakan</td>
+                    <td>Pakan</td>
+                    <td>5 zak</td>
+                    <td>425.000</td>
+                    <td>2.125.000</td>
+                  </tr>
+                  <tr>
+                    <td>21/01/2019</td>
+                    <td>Pakan</td>
+                    <td>Pakan</td>
+                    <td>5 zak</td>
+                    <td>425.000</td>
+                    <td>2.125.000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
-      </div>
+        <div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="filterModal"
+          aria-hidden="true">
+          <div class="modal-dialog modal-primary" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Filter Data</h4>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="" method="post">
+                  <div class="form-group">
+                    <label for="date-from">Dari</label>
+                    <input class="form-control" id="date-from" type="date" name="date-input" placeholder="date"
+                      value="2020-01-09">
+                  </div>
+                  <div class="form-group">
+                    <label for="date-to">Sampai</label>
+                    <input class="form-control" id="date-to" type="date" name="date-input" placeholder="date"
+                      value="2020-01-16">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                <button class="btn btn-primary" type="button">Simpan</button>
+              </div>
+            </div>
+          </div>
     </main>
   </div>
   <!-- CoreUI and necessary plugins-->
@@ -180,6 +296,9 @@
   <script src="vendors/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
   <script src="vendors/toastr/js/toastr.min.js"></script>
   <script src="vendors/@coreui/coreui/dist/js/coreui.min.js"></script>
+  <!-- Plugins and scripts required by this view-->
+  <script src="vendors/datatables/js/datatables.min.js"></script>
+  <script src="js/datatables.js"></script>
 </body>
 
 </html>

@@ -81,10 +81,6 @@
                   <i class="nav-icon icon-chart"></i> Overview</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="stok.html" target="_top">
-                  <i class="nav-icon icon-basket-loaded"></i> Stok</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="pemasukan.html" target="_top">
                   <i class="nav-icon cui-chevron-bottom"></i> Pemasukan</a>
               </li>
@@ -105,10 +101,6 @@
               <li class="nav-item">
                 <a class="nav-link" href="overview.html" target="_top">
                   <i class="nav-icon icon-chart"></i> Overview</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="stok.html" target="_top">
-                  <i class="nav-icon icon-basket-loaded"></i> Stok</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="pemasukan.html" target="_top">
@@ -152,15 +144,25 @@
                 <div class="col-md-6 col-12">
                   <div class="form-group">
                     <label for="mitra">Pilih Mitra</label>
-                    <select class="form-control" id="mitra">
+                    <select class="form-control" id="mitra" name="mitra">
                       <option>Mitra 1</option>
                       <option>Mitra 2</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="itemType">Pilih Jenis Barang</label>
+                    <select class="form-control" id="itemType" name="itemType">
+                      <option>Pakan</option>
+                      <option>DOC</option>
+                      <option>Obat</option>
                     </select>
                   </div>
                   <div class="form-group">
                     <label for="itemName">Nama Barang</label>
                     <input class="form-control" id="itemName" type="text" name="itemName" placeholder="Pakan">
                   </div>
+                </div>
+                <div class="col-md-6 col-12">
                   <div class="form-group">
                     <label for="buyPrice">Harga Beli</label>
                     <div class="input-group">
@@ -170,16 +172,6 @@
                       <input class="form-control" id="buyPrice" type="number" name="buyPrice" placeholder="80000">
                     </div>
                   </div>
-                </div>
-                <div class="col-md-6 col-12">
-                  <div class="form-group">
-                    <label for="qty">Jumlah</label>
-                    <input class="form-control" id="qty" type="number" name="qty" placeholder="5">
-                  </div>
-                  <div class="form-group">
-                    <label for="unit">Satuan</label>
-                    <input class="form-control" id="unit" type="text" name="unit" placeholder="zak">
-                  </div>
                   <div class="form-group">
                     <label for="sellPrice">Harga Jual</label>
                     <div class="input-group">
@@ -187,6 +179,20 @@
                         <span class="input-group-text">Rp</span>
                       </div>
                       <input class="form-control" id="sellPrice" type="number" name="sellPrice" placeholder="90000">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label for="qty">Jumlah</label>
+                        <input class="form-control" id="qty" type="number" name="qty" placeholder="5">
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label for="unit">Satuan</label>
+                        <input class="form-control" id="unit" type="text" name="unit" placeholder="zak">
+                      </div>
                     </div>
                   </div>
                 </div>

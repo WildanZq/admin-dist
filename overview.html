@@ -26,6 +26,7 @@
   <!-- Main styles for this application-->
   <link href="css/style.min.css" rel="stylesheet">
   <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+  <link href="vendors/chart.js/dist/Chart.min.css" rel="stylesheet">
   <link href="vendors/toastr/css/toastr.css" rel="stylesheet">
 </head>
 
@@ -127,41 +128,115 @@
     </div>
     <main class="main">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item">Mitra</li>
-        <li class="breadcrumb-item active">Tambah</li>
+        <li class="breadcrumb-item active">Mitra</li>
+        <li class="breadcrumb-menu">
+          <button class="btn" type="button" data-toggle="modal" data-target="#filterModal">
+            <i class="icons cui-list"></i> Filter
+          </button>
+        </li>
       </ol>
       <div class="container-fluid">
         <div class="animated fadeIn">
           <div class="row">
-            <div class="col-md-6 col-12">
-              <div class="card">
+            <div class="col-sm-6 col-md-3">
+              <div class="card text-white bg-primary">
                 <div class="card-body">
-                  <h4 class="card-title">Tambah Mitra</h4>
-                  <form action="" method="post">
-                    <div class="form-group">
-                      <label for="mitraName">Nama Mitra</label>
-                      <input class="form-control" id="mitraName" type="text" name="mitraName" placeholder="Sujito">
-                    </div>
-                    <div class="form-group">
-                      <label for="population">Populasi</label>
-                      <input class="form-control" id="population" type="number" name="population" placeholder="1000">
-                    </div>
-                    <div class="form-group">
-                      <label for="percentage">Bagi Hasil</label>
-                      <div class="input-group">
-                        <input class="form-control" id="percentage" type="number" name="percentage" placeholder="25" min="0" max="100">
-                        <div class="input-group-append">
-                          <span class="input-group-text">%</span>
-                        </div>
-                      </div>
-                      <span class="help-block">Persentase keuntungan yang diambil</span>
-                    </div>
-                    <div class="d-flex justify-content-end">
-                      <a class="btn btn-secondary" href="dashboard.html">Batal</a>
-                      <a class="btn btn-primary ml-2" href="dashboard.html"><i class="icon-plus"></i> Tambah</a>
-                    </div>
-                  </form>
+                  <div class="h1 text-muted text-right mb-4">
+                    <i class="icon-home"></i>
+                  </div>
+                  <div class="text-value">1.000</div>
+                  <small class="text-muted text-uppercase font-weight-bold">Populasi</small>
                 </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="card text-white bg-warning">
+                <div class="card-body">
+                  <div class="h1 text-muted text-right mb-4">
+                    <i class="icon-basket-loaded"></i>
+                  </div>
+                  <div class="text-value">1.002</div>
+                  <small class="text-muted text-uppercase font-weight-bold">Total Panen</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="card text-white bg-success">
+                <div class="card-body">
+                  <div class="h1 text-muted text-right mb-4">
+                    <i class="cui-chevron-bottom"></i>
+                  </div>
+                  <div class="text-value">Rp28.000.000</div>
+                  <small class="text-muted text-uppercase font-weight-bold">Total Pemasukan</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="card text-white bg-danger">
+                <div class="card-body">
+                  <div class="h1 text-muted text-right mb-4">
+                    <i class="cui-chevron-top"></i>
+                  </div>
+                  <div class="text-value">Rp20.000.000</div>
+                  <small class="text-muted text-uppercase font-weight-bold">Total Pengeluaran</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex">
+                <div class="flex-grow-1">
+                  <h4 class="card-title mb-0">Pendapatan</h4>
+                  <div class="small text-muted">Januari 2019 - Juli 2019</div>
+                </div>
+                <div>
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label style="cursor: pointer;" class="btn btn-outline-primary">
+                      <input id="option1" type="radio" name="options" autocomplete="off"> Hari
+                    </label>
+                    <label style="cursor: pointer;" class="btn btn-outline-primary active">
+                      <input id="option2" type="radio" name="options" autocomplete="off" checked=""> Bulan
+                    </label>
+                    <label style="cursor: pointer;" class="btn btn-outline-primary">
+                      <input id="option3" type="radio" name="options" autocomplete="off"> Tahun
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-wrapper" style="height:300px;margin-top:40px;">
+                <canvas class="chart" id="main-chart" height="300"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="filterModal"
+          aria-hidden="true">
+          <div class="modal-dialog modal-primary" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Filter Data</h4>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="" method="post">
+                  <div class="form-group">
+                    <label for="date-from">Dari</label>
+                    <input class="form-control" id="date-from" type="date" name="date-input" placeholder="date"
+                      value="2020-01-09">
+                  </div>
+                  <div class="form-group">
+                    <label for="date-to">Sampai</label>
+                    <input class="form-control" id="date-to" type="date" name="date-input" placeholder="date"
+                      value="2020-01-16">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                <button class="btn btn-primary" type="button">Simpan</button>
               </div>
             </div>
           </div>
@@ -177,6 +252,10 @@
   <script src="vendors/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
   <script src="vendors/toastr/js/toastr.min.js"></script>
   <script src="vendors/@coreui/coreui/dist/js/coreui.min.js"></script>
+  <!-- Plugins and scripts required by this view-->
+  <script src="vendors/chart.js/dist/Chart.min.js"></script>
+  <script src="vendors/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>
