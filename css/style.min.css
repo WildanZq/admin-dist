@@ -19,7 +19,7 @@
 .breadcrumb {
     position: fixed;
     top: 55px;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
     display: flex;
 }
@@ -27,4 +27,8 @@
 .breadcrumb > .breadcrumb-menu {
     position: fixed;
     right: 1rem;
+}
+
+a.card:hover *, a.card:hover {
+    text-decoration: none !important;
 }
