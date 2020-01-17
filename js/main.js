@@ -30,6 +30,10 @@ Chart.defaults.global.tooltips.callbacks.labelColor = function (tooltipItem, cha
 var random = function random() {
   return Math.round((Math.random() + 1) * 1000000);
 }; // eslint-disable-next-line no-unused-vars
+// random Numbers
+var random1 = function random1() {
+  return Math.round((Math.random() + 2) * 1000000);
+}; // eslint-disable-next-line no-unused-vars
 
 var mainChart = new Chart($('#main-chart'), {
   type: 'line',
@@ -41,7 +45,7 @@ var mainChart = new Chart($('#main-chart'), {
       borderColor: getStyle('--success'),
       pointHoverBackgroundColor: '#fff',
       borderWidth: 2,
-      data: [random(), random(), random(), random(), random(), random(), random()]
+      data: [random1(), random1(), random1(), random1(), random1(), random1(), random1()]
     }, {
       label: 'Pengeluaran',
       backgroundColor: 'transparent',

@@ -44,8 +44,8 @@
     </button>
     <ul class="nav navbar-nav ml-auto">
       <li class="nav-item dropdown">
-        <a class="nav-link mr-3 mr-md-4" href="./">
-          <i class="icons d-block cui-account-logout"></i> Logout
+        <a class="mr-3 mr-md-4 btn btn-primary btn-pill" href="./">
+          <i class="icons cui-account-logout"></i> Logout
         </a>
         <div class="dropdown-menu dropdown-menu-right">
           <a class="dropdown-item" href="#">
@@ -141,17 +141,6 @@
           <button class="btn" type="button" data-toggle="modal" data-target="#filterModal">
             <i class="icons cui-list"></i> Filter
           </button>
-          <div class=" d-md-down-none btn-group btn-group-toggle float-md-right mr-3" data-toggle="buttons">
-            <label style="cursor: pointer;" class="btn btn-outline-secondary">
-              <input id="option1" type="radio" name="options" autocomplete="off"> Hari
-            </label>
-            <label style="cursor: pointer;" class="btn btn-outline-secondary active">
-              <input id="option2" type="radio" name="options" autocomplete="off" checked=""> Bulan
-            </label>
-            <label style="cursor: pointer;" class="btn btn-outline-secondary">
-              <input id="option3" type="radio" name="options" autocomplete="off"> Tahun
-            </label>
-          </div>
         </li>
       </ol>
       <div class="container-fluid">
@@ -207,9 +196,20 @@
               <div class="row">
                 <div class="col-md-5 col-12">
                   <h4 class="card-title mb-0">Pendapatan</h4>
+                  <div class="small text-muted">Januari 2019 - Juli 2019</div>
                 </div>
                 <div class="col-md-7 col-12 mt-md-0 mt-1">
-                  <div class="small text-muted float-md-right">Januari 2019 - Juli 2019</div>
+                  <div class=" d-md-down-none btn-group btn-group-toggle float-md-right" data-toggle="buttons">
+                    <label style="cursor: pointer;" class="btn btn-outline-primary">
+                      <input id="option1" type="radio" name="options" autocomplete="off"> Hari
+                    </label>
+                    <label style="cursor: pointer;" class="btn btn-outline-primary active">
+                      <input id="option2" type="radio" name="options" autocomplete="off" checked=""> Bulan
+                    </label>
+                    <label style="cursor: pointer;" class="btn btn-outline-primary">
+                      <input id="option3" type="radio" name="options" autocomplete="off"> Tahun
+                    </label>
+                  </div>
                 </div>
               </div>
               <div class="chart-wrapper" style="height:300px;margin-top:40px;">
