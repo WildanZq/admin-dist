@@ -26,7 +26,7 @@
   <!-- Main styles for this application-->
   <link href="css/style.min.css" rel="stylesheet">
   <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
-  <link href="vendors/chart.js/dist/Chart.min.css" rel="stylesheet">
+  <link href="vendors/datatables/css/datatables.min.css" rel="stylesheet">
   <link href="vendors/toastr/css/toastr.css" rel="stylesheet">
 </head>
 
@@ -128,7 +128,10 @@
     </div>
     <main class="main">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item active">Mitra</li>
+        <li class="breadcrumb-item">
+          <a href="overview.html">Mitra</a>
+        </li>
+        <li class="breadcrumb-item active">Pemasukan</li>
         <li class="breadcrumb-menu">
           <button class="btn" type="button" data-toggle="modal" data-target="#filterModal">
             <i class="icons cui-list"></i> Filter
@@ -166,47 +169,52 @@
                   <div class="h1 text-muted text-right mb-4">
                     <i class="cui-chevron-bottom"></i>
                   </div>
-                  <div class="text-value">Rp28.000.000</div>
+                  <div class="text-value">Rp39.486.750</div>
                   <small class="text-muted text-uppercase font-weight-bold">Total Pemasukan</small>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <div class="card text-white bg-danger">
-                <div class="card-body">
-                  <div class="h1 text-muted text-right mb-4">
-                    <i class="cui-chevron-top"></i>
-                  </div>
-                  <div class="text-value">Rp20.000.000</div>
-                  <small class="text-muted text-uppercase font-weight-bold">Total Pengeluaran</small>
                 </div>
               </div>
             </div>
           </div>
           <div class="card">
             <div class="card-body">
-              <div class="d-flex">
+              <div class="d-flex mb-4 mt-2">
                 <div class="flex-grow-1">
-                  <h4 class="card-title mb-0">Pendapatan</h4>
+                  <h4 class="card-title mb-0">Pemasukan</h4>
                   <div class="small text-muted">Januari 2019 - Juli 2019</div>
                 </div>
                 <div>
-                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label style="cursor: pointer;" class="btn btn-outline-primary">
-                      <input id="option1" type="radio" name="options" autocomplete="off"> Hari
-                    </label>
-                    <label style="cursor: pointer;" class="btn btn-outline-primary active">
-                      <input id="option2" type="radio" name="options" autocomplete="off" checked=""> Bulan
-                    </label>
-                    <label style="cursor: pointer;" class="btn btn-outline-primary">
-                      <input id="option3" type="radio" name="options" autocomplete="off"> Tahun
-                    </label>
-                  </div>
+                  <a href="addPemasukan.html" class="btn btn-primary">
+                    <i class="icon-plus"></i> Tambah
+                  </a>
                 </div>
               </div>
-              <div class="chart-wrapper" style="height:300px;margin-top:40px;">
-                <canvas class="chart" id="main-chart" height="300"></canvas>
-              </div>
+              <table class="table table-responsive-lg table-striped" id="invTable">
+                <thead>
+                  <tr>
+                    <th>Tanggal</th>
+                    <th>Nama</th>
+                    <th>Jumlah</th>
+                    <th>Harga</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>01/02/2019</td>
+                    <td>Panen 9+2 Minggu</td>
+                    <td>791 ekor</td>
+                    <td>39.250</td>
+                    <td>31.046.750</td>
+                  </tr>
+                  <tr>
+                    <td>21/01/2019</td>
+                    <td>Panen 10+2 Minggu</td>
+                    <td>211 ekor</td>
+                    <td>40.000</td>
+                    <td>8.440.000</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -241,7 +249,38 @@
             </div>
           </div>
         </div>
-      </div>
+        <div class="modal fade" id="changeModal" tabindex="-1" role="dialog" aria-labelledby="changeModal"
+          aria-hidden="true">
+          <div class="modal-dialog modal-primary" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Pindahkan Barang</h4>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="" method="post">
+                  <div class="form-group">
+                    <label for="mitra">Pilih Mitra</label>
+                    <select class="form-control" id="mitra" name="mitra">
+                      <option>Mitra 1</option>
+                      <option>Mitra 2</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="qty">Jumlah</label>
+                    <input class="form-control" id="qty" type="number" name="qty" placeholder="5">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                <button class="btn btn-primary" type="button">Pindahkan</button>
+              </div>
+            </div>
+          </div>
+        </div>
     </main>
   </div>
   <!-- CoreUI and necessary plugins-->
@@ -253,9 +292,8 @@
   <script src="vendors/toastr/js/toastr.min.js"></script>
   <script src="vendors/@coreui/coreui/dist/js/coreui.min.js"></script>
   <!-- Plugins and scripts required by this view-->
-  <script src="vendors/chart.js/dist/Chart.min.js"></script>
-  <script src="vendors/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="vendors/datatables/js/datatables.min.js"></script>
+  <script src="js/datatables.js"></script>
 </body>
 
 </html>
