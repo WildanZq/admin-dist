@@ -140,11 +140,6 @@
           <a href="dashboard.html">Dashboard</a>
         </li>
         <li class="breadcrumb-item active">Stok</li>
-        <li class="breadcrumb-menu">
-          <button class="btn" type="button" data-toggle="modal" data-target="#filterModal">
-            <i class="icons cui-list"></i> Filter
-          </button>
-        </li>
       </ol>
       <div class="container-fluid">
         <div class="animated fadeIn">
@@ -153,7 +148,6 @@
               <div class="d-flex mb-4 mt-2">
                 <div class="flex-grow-1">
                   <h4 class="card-title mb-0">Stok</h4>
-                  <div class="small text-muted">Januari 2019 - Juli 2019</div>
                 </div>
                 <div>
                   <a href="addStock.html" class="btn btn-primary float-right ml-1">
@@ -170,13 +164,11 @@
                   <tr>
                     <th>Tanggal</th>
                     <th>Penjual</th>
+                    <th>Jenis Barang</th>
                     <th>Nama Barang</th>
-                    <th>Sisa</th>
-                    <th>Jumlah Beli</th>
+                    <th>Jumlah</th>
                     <th>Harga Beli</th>
                     <th>Harga Jual</th>
-                    <th>Total</th>
-                    <th>Status</th>
                     <th></th>
                   </tr>
                 </thead>
@@ -185,12 +177,10 @@
                     <td>01/02/2019</td>
                     <td>Yiorgos Avraamu</td>
                     <td>DOC</td>
-                    <td>0 ekor</td>
+                    <td>DOC</td>
                     <td>1.000 ekor</td>
                     <td>14.000</td>
                     <td>14.500</td>
-                    <td>14.000.000</td>
-                    <td class="text-success">Sudah Lunas</td>
                     <td>
                       <button class="btn btn-sm btn-danger">
                         <i class="icon-trash"></i> Hapus
@@ -201,12 +191,10 @@
                     <td>21/01/2019</td>
                     <td>Avram Tarasios</td>
                     <td>Pakan</td>
-                    <td>2 zak</td>
+                    <td>Pakan</td>
                     <td>5 zak</td>
                     <td>420.000</td>
                     <td>425.000</td>
-                    <td>2.100.000</td>
-                    <td class="text-success">Sudah Lunas</td>
                     <td>
                       <button class="btn btn-sm btn-danger">
                         <i class="icon-trash"></i> Hapus
@@ -216,13 +204,11 @@
                   <tr>
                     <td>01/02/2019</td>
                     <td>Quintin Ed</td>
+                    <td>Obat</td>
                     <td>Vit C</td>
-                    <td>0 bks</td>
                     <td>1 bks</td>
                     <td>80.000</td>
                     <td>81.250</td>
-                    <td>80.000</td>
-                    <td class="text-success">Sudah Lunas</td>
                     <td>
                       <button class="btn btn-sm btn-danger">
                         <i class="icon-trash"></i> Hapus
@@ -233,19 +219,10 @@
                     <td>01/03/2019</td>
                     <td>Enéas Kwadwo</td>
                     <td>Pakan</td>
-                    <td>0 zak</td>
+                    <td>Pakan</td>
                     <td>5 zak</td>
                     <td>420.000</td>
                     <td>425.000</td>
-                    <td>2.100.000</td>
-                    <td class="text-danger">
-                      Belum Lunas
-                      &nbsp;
-                      <button class="btn btn-sm btn-primary" type="button" data-toggle="modal"
-                        data-target="#statusModal">
-                        <i class="icon-pencil"></i> Ubah
-                      </button>
-                    </td>
                     <td>
                       <button class="btn btn-sm btn-danger">
                         <i class="icon-trash"></i> Hapus
@@ -256,19 +233,10 @@
                     <td>21/01/2019</td>
                     <td>Agapetus Tadeáš</td>
                     <td>Pakan</td>
-                    <td>1 zak</td>
+                    <td>Pakan</td>
                     <td>5 zak</td>
                     <td>420.000</td>
                     <td>425.000</td>
-                    <td>2.100.000</td>
-                    <td class="text-danger">
-                      Belum Lunas
-                      &nbsp;
-                      <button class="btn btn-sm btn-primary" type="button" data-toggle="modal"
-                        data-target="#statusModal">
-                        <i class="icon-pencil"></i> Ubah
-                      </button>
-                    </td>
                     <td>
                       <button class="btn btn-sm btn-danger">
                         <i class="icon-trash"></i> Hapus
@@ -277,65 +245,6 @@
                   </tr>
                 </tbody>
               </table>
-            </div>
-          </div>
-        </div>
-        <div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="filterModal"
-          aria-hidden="true">
-          <div class="modal-dialog modal-primary" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h4 class="modal-title">Filter Data</h4>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">×</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form action="" method="post">
-                  <div class="form-group">
-                    <label for="date-from">Dari</label>
-                    <input class="form-control" id="date-from" type="date" name="date-input" placeholder="date"
-                      value="2020-01-09">
-                  </div>
-                  <div class="form-group">
-                    <label for="date-to">Sampai</label>
-                    <input class="form-control" id="date-to" type="date" name="date-input" placeholder="date"
-                      value="2020-01-16">
-                  </div>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-                <button class="btn btn-primary" type="button">Simpan</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal fade" id="statusModal" tabindex="-1" role="dialog" aria-labelledby="statusModal"
-          aria-hidden="true">
-          <div class="modal-dialog modal-primary" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h4 class="modal-title">Ubah Status</h4>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">×</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form action="" method="post">
-                  <div class="form-group">
-                    <label for="status">Ubah Status</label>
-                    <select class="form-control" id="status" name="status">
-                      <option>Belum Lunas</option>
-                      <option>Sudah Lunas</option>
-                    </select>
-                  </div>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-                <button class="btn btn-primary" type="button">Simpan</button>
-              </div>
             </div>
           </div>
         </div>

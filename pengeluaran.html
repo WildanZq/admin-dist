@@ -26,7 +26,7 @@
   <!-- Main styles for this application-->
   <link href="css/style.min.css" rel="stylesheet">
   <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
-  <link href="vendors/chart.js/dist/Chart.min.css" rel="stylesheet">
+  <link href="vendors/datatables/css/datatables.min.css" rel="stylesheet">
   <link href="vendors/toastr/css/toastr.css" rel="stylesheet">
 </head>
 
@@ -136,7 +136,10 @@
     </div>
     <main class="main">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item active">Mitra</li>
+        <li class="breadcrumb-item">
+          <a href="dashboard.html">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Pengeluaran</li>
         <li class="breadcrumb-menu">
           <button class="btn" type="button" data-toggle="modal" data-target="#filterModal">
             <i class="icons cui-list"></i> Filter
@@ -145,120 +148,133 @@
       </ol>
       <div class="container-fluid">
         <div class="animated fadeIn">
-          <div class="row">
-            <div class="col-sm-6 col-md-3">
-              <div class="card text-white bg-primary">
-                <div class="card-body">
-                  <div class="h1 text-muted text-right mb-4">
-                    <i class="icon-home"></i>
-                  </div>
-                  <div class="text-value">1.000</div>
-                  <small class="text-muted text-uppercase font-weight-bold">Populasi</small>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <div class="card text-white bg-indigo">
-                <div class="card-body">
-                  <div class="h1 text-muted text-right mb-4">
-                    <i class="fa fa-percent"></i>
-                  </div>
-                  <div class="text-value">30%</div>
-                  <small class="text-muted text-uppercase font-weight-bold">Persentase</small>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <a href="pemasukan.html" class="card text-white bg-success">
-                <div class="card-body">
-                  <div class="h1 text-muted text-right mb-4">
-                    <i class="cui-chevron-bottom"></i>
-                  </div>
-                  <div class="text-value">Rp28.000.000</div>
-                  <small class="text-muted text-uppercase font-weight-bold">Total Pemasukan</small>
-                </div>
-              </a>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <a href="pengeluaran.html" class="card text-white bg-danger">
-                <div class="card-body">
-                  <div class="h1 text-muted text-right mb-4">
-                    <i class="cui-chevron-top"></i>
-                  </div>
-                  <div class="text-value">Rp20.000.000</div>
-                  <small class="text-muted text-uppercase font-weight-bold">Total Pengeluaran</small>
-                </div>
-              </a>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <div class="card text-white bg-warning">
-                <div class="card-body">
-                  <div class="h1 text-muted text-right mb-4">
-                    <i class="icon-basket-loaded"></i>
-                  </div>
-                  <div class="text-value">1.002</div>
-                  <small class="text-muted text-uppercase font-weight-bold">Jumlah Panen</small>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <div class="card text-white bg-pink">
-                <div class="card-body">
-                  <div class="h1 text-muted text-right mb-4">
-                    <i class="fa fa-money"></i>
-                  </div>
-                  <div class="text-value">Rp8.000.000</div>
-                  <small class="text-muted text-uppercase font-weight-bold">Total Laba</small>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <div class="card text-white bg-facebook">
-                <div class="card-body">
-                  <div class="h1 text-muted text-right mb-4">
-                    <i class="fa fa-money"></i>
-                  </div>
-                  <div class="text-value">Rp2.400.000</div>
-                  <small class="text-muted text-uppercase font-weight-bold">Total Laba x Persentase</small>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <a class="card text-white bg-dark" style="cursor: pointer;" onclick="window.print();">
-                <div class="card-body">
-                  <div class="h1 text-muted text-right mb-4">
-                    <i class="icon-printer"></i>
-                  </div>
-                  <div class="text-value">Print</div>
-                  <small class="text-muted text-uppercase font-weight-bold">Cetak Laporan</small>
-                </div>
-              </a>
-            </div>
-          </div>
           <div class="card">
             <div class="card-body">
-              <div class="d-flex">
+              <div class="d-flex mb-4 mt-2">
                 <div class="flex-grow-1">
-                  <h4 class="card-title mb-0">Pendapatan</h4>
+                  <h4 class="card-title mb-0">Pengeluaran</h4>
                   <div class="small text-muted">Januari 2019 - Juli 2019</div>
                 </div>
                 <div>
-                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label style="cursor: pointer;" class="btn btn-outline-primary">
-                      <input id="option1" type="radio" name="options" autocomplete="off"> Hari
-                    </label>
-                    <label style="cursor: pointer;" class="btn btn-outline-primary active">
-                      <input id="option2" type="radio" name="options" autocomplete="off" checked=""> Bulan
-                    </label>
-                    <label style="cursor: pointer;" class="btn btn-outline-primary">
-                      <input id="option3" type="radio" name="options" autocomplete="off"> Tahun
-                    </label>
-                  </div>
+                  <a href="addPengeluaran.html" class="btn btn-primary float-right">
+                    <i class="icon-plus"></i> Tambah
+                  </a>
                 </div>
               </div>
-              <div class="chart-wrapper" style="height:300px;margin-top:40px;">
-                <canvas class="chart" id="main-chart" height="300"></canvas>
-              </div>
+              <table class="table table-responsive-lg table-striped" id="invTable">
+                <thead>
+                  <tr>
+                    <th>Tanggal</th>
+                    <th>Penjual</th>
+                    <th>Nama Barang</th>
+                    <th>Jumlah</th>
+                    <th>Harga</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>22/01/2019</td>
+                    <td>-</td>
+                    <td>Listrik</td>
+                    <td>1</td>
+                    <td>300.000</td>
+                    <td>300.000</td>
+                    <td class="text-success">Sudah Lunas</td>
+                    <td>
+                      <button class="btn btn-sm btn-danger">
+                        <i class="icon-trash"></i> Hapus
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>01/02/2019</td>
+                    <td>Yiorgos Avraamu</td>
+                    <td>DOC</td>
+                    <td>1.000 ekor</td>
+                    <td>14.000</td>
+                    <td>14.000.000</td>
+                    <td class="text-success">Sudah Lunas</td>
+                    <td>
+                      <button class="btn btn-sm btn-danger">
+                        <i class="icon-trash"></i> Hapus
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>21/01/2019</td>
+                    <td>Avram Tarasios</td>
+                    <td>Pakan</td>
+                    <td>5 zak</td>
+                    <td>420.000</td>
+                    <td>2.100.000</td>
+                    <td class="text-success">Sudah Lunas</td>
+                    <td>
+                      <button class="btn btn-sm btn-danger">
+                        <i class="icon-trash"></i> Hapus
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>01/02/2019</td>
+                    <td>Quintin Ed</td>
+                    <td>Vit C</td>
+                    <td>1 bks</td>
+                    <td>80.000</td>
+                    <td>80.000</td>
+                    <td class="text-success">Sudah Lunas</td>
+                    <td>
+                      <button class="btn btn-sm btn-danger">
+                        <i class="icon-trash"></i> Hapus
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>01/03/2019</td>
+                    <td>Enéas Kwadwo</td>
+                    <td>Pakan</td>
+                    <td>5 zak</td>
+                    <td>420.000</td>
+                    <td>2.100.000</td>
+                    <td class="text-danger">
+                      Belum Lunas
+                      &nbsp;
+                      <button class="btn btn-sm btn-primary" type="button" data-toggle="modal"
+                        data-target="#statusModal">
+                        <i class="icon-pencil"></i> Ubah
+                      </button>
+                    </td>
+                    <td>
+                      <button class="btn btn-sm btn-danger">
+                        <i class="icon-trash"></i> Hapus
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>21/01/2019</td>
+                    <td>Agapetus Tadeáš</td>
+                    <td>Pakan</td>
+                    <td>5 zak</td>
+                    <td>420.000</td>
+                    <td>2.100.000</td>
+                    <td class="text-danger">
+                      Belum Lunas
+                      &nbsp;
+                      <button class="btn btn-sm btn-primary" type="button" data-toggle="modal"
+                        data-target="#statusModal">
+                        <i class="icon-pencil"></i> Ubah
+                      </button>
+                    </td>
+                    <td>
+                      <button class="btn btn-sm btn-danger">
+                        <i class="icon-trash"></i> Hapus
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -293,6 +309,34 @@
             </div>
           </div>
         </div>
+        <div class="modal fade" id="statusModal" tabindex="-1" role="dialog" aria-labelledby="statusModal"
+          aria-hidden="true">
+          <div class="modal-dialog modal-primary" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Ubah Status</h4>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="" method="post">
+                  <div class="form-group">
+                    <label for="status">Ubah Status</label>
+                    <select class="form-control" id="status" name="status">
+                      <option>Belum Lunas</option>
+                      <option>Sudah Lunas</option>
+                    </select>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                <button class="btn btn-primary" type="button">Simpan</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   </div>
@@ -305,9 +349,8 @@
   <script src="vendors/toastr/js/toastr.min.js"></script>
   <script src="vendors/@coreui/coreui/dist/js/coreui.min.js"></script>
   <!-- Plugins and scripts required by this view-->
-  <script src="vendors/chart.js/dist/Chart.min.js"></script>
-  <script src="vendors/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="vendors/datatables/js/datatables.min.js"></script>
+  <script src="js/datatables.js"></script>
 </body>
 
 </html>
