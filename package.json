@@ -30,6 +30,7 @@
     "perfect-scrollbar": "^1.4.0",
     "popper.js": "^1.15.0",
     "regenerator-runtime": "^0.13.2",
+    "select2": "^4.0.13",
     "simple-line-icons": "2.4.1"
   }
 }
