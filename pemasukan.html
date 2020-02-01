@@ -139,7 +139,7 @@
         <li class="breadcrumb-item">
           <a href="dashboard.html">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Pengeluaran</li>
+        <li class="breadcrumb-item active">Pemasukan</li>
         <li class="breadcrumb-menu">
           <button class="btn" type="button" data-toggle="modal" data-target="#filterModal">
             <i class="icons cui-list"></i> Filter
@@ -148,15 +148,98 @@
       </ol>
       <div class="container-fluid">
         <div class="animated fadeIn">
+          <div class="row">
+            <div class="col-sm-6 col-md-3">
+              <div class="card text-white bg-success">
+                <div class="card-body">
+                  <div class="h1 text-muted text-right mb-4">
+                    <i class="cui-chevron-bottom"></i>
+                  </div>
+                  <div class="text-value">Rp49.486.750</div>
+                  <small class="text-muted text-uppercase font-weight-bold">Total Pemasukan</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <a href="stock.html" class="card text-white bg-warning">
+                <div class="card-body">
+                  <div class="h1 text-muted text-right mb-4">
+                    <i class="icon-basket-loaded"></i>
+                  </div>
+                  <div class="text-value">1238</div>
+                  <small class="text-muted text-uppercase font-weight-bold">Barang Terjual</small>
+                </div>
+              </a>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="card text-white bg-indigo">
+                <div class="card-body">
+                  <div class="h1 text-muted text-right mb-4">
+                    <i class="icon-basket"></i>
+                  </div>
+                  <div class="text-value">Rp10.800.000</div>
+                  <small class="text-muted text-uppercase font-weight-bold">Total Laba Penjualan</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="card text-white bg-primary">
+                <div class="card-body">
+                  <div class="h1 text-muted text-right mb-4">
+                    <i class="fa fa-percent"></i>
+                  </div>
+                  <div class="text-value">Rp20.486.750</div>
+                  <small class="text-muted text-uppercase font-weight-bold">Total Laba Mitra</small>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="card">
             <div class="card-body">
               <div class="d-flex mb-4 mt-2">
                 <div class="flex-grow-1">
-                  <h4 class="card-title mb-0">Pengeluaran</h4>
+                  <h4 class="card-title mb-0">Pemasukan (stok)</h4>
+                  <div class="small text-muted">Januari 2019 - Juli 2019</div>
+                </div>
+              </div>
+              <table class="table table-responsive-lg table-striped" id="invTable">
+                <thead>
+                  <tr>
+                    <th>Tanggal</th>
+                    <th>Nama</th>
+                    <th>Jumlah</th>
+                    <th>Laba</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>01/02/2019</td>
+                    <td>DOC</td>
+                    <td>700 ekor</td>
+                    <td>14.000</td>
+                    <td>9.800.000</td>
+                  </tr>
+                  <tr>
+                    <td>21/01/2019</td>
+                    <td>Pakan</td>
+                    <td>100 zak</td>
+                    <td>10.000</td>
+                    <td>1.000.000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex mb-4 mt-2">
+                <div class="flex-grow-1">
+                  <h4 class="card-title mb-0">Pemasukan (panen)</h4>
                   <div class="small text-muted">Januari 2019 - Juli 2019</div>
                 </div>
                 <div>
-                  <a href="addPengeluaran.html" class="btn btn-primary float-right">
+                  <a href="addPemasukan.html" class="btn btn-primary">
                     <i class="icon-plus"></i> Tambah
                   </a>
                 </div>
@@ -165,8 +248,9 @@
                 <thead>
                   <tr>
                     <th>Tanggal</th>
-                    <th>Penjual</th>
-                    <th>Nama Barang</th>
+                    <th>Pembeli</th>
+                    <th>Mitra</th>
+                    <th>Nama</th>
                     <th>Jumlah</th>
                     <th>Harga</th>
                     <th>Total</th>
@@ -176,26 +260,13 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>01/02/2019</td>
-                    <td>Yiorgos Avraamu</td>
-                    <td>DOC</td>
-                    <td>1.000 ekor</td>
-                    <td>14.000</td>
-                    <td>14.000.000</td>
-                    <td class="text-success">Sudah Lunas</td>
-                    <td>
-                      <button class="btn btn-sm btn-danger">
-                        <i class="icon-trash"></i> Hapus
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>21/01/2019</td>
-                    <td>Avram Tarasios</td>
-                    <td>Pakan</td>
-                    <td>5 zak</td>
-                    <td>420.000</td>
-                    <td>2.100.000</td>
+                    <td>24/01/2019</td>
+                    <td>Jono</td>
+                    <td>-</td>
+                    <td>10+2 Minggu</td>
+                    <td>200 ekor</td>
+                    <td>40.000</td>
+                    <td>8.000.000</td>
                     <td class="text-success">Sudah Lunas</td>
                     <td>
                       <button class="btn btn-sm btn-danger">
@@ -205,11 +276,12 @@
                   </tr>
                   <tr>
                     <td>01/02/2019</td>
-                    <td>Quintin Ed</td>
-                    <td>Vit C</td>
-                    <td>1 bks</td>
-                    <td>80.000</td>
-                    <td>80.000</td>
+                    <td>Jono</td>
+                    <td>Mitra 1</td>
+                    <td>Panen 10+2 Minggu</td>
+                    <td>211 ekor</td>
+                    <td>40.000</td>
+                    <td>8.440.000</td>
                     <td class="text-success">Sudah Lunas</td>
                     <td>
                       <button class="btn btn-sm btn-danger">
@@ -218,33 +290,13 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>01/03/2019</td>
-                    <td>Enéas Kwadwo</td>
-                    <td>Pakan</td>
-                    <td>5 zak</td>
-                    <td>420.000</td>
-                    <td>2.100.000</td>
-                    <td class="text-danger">
-                      Belum Lunas
-                      &nbsp;
-                      <button class="btn btn-sm btn-primary" type="button" data-toggle="modal"
-                        data-target="#statusModal">
-                        <i class="icon-pencil"></i> Ubah
-                      </button>
-                    </td>
-                    <td>
-                      <button class="btn btn-sm btn-danger">
-                        <i class="icon-trash"></i> Hapus
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
                     <td>21/01/2019</td>
-                    <td>Agapetus Tadeáš</td>
-                    <td>Pakan</td>
-                    <td>5 zak</td>
-                    <td>420.000</td>
-                    <td>2.100.000</td>
+                    <td>Budi</td>
+                    <td>Mitra 2</td>
+                    <td>Panen 9+2 Minggu</td>
+                    <td>791 ekor</td>
+                    <td>39.250</td>
+                    <td>31.046.750</td>
                     <td class="text-danger">
                       Belum Lunas
                       &nbsp;
@@ -261,6 +313,48 @@
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-lg-3">
+              <div class="brand-card">
+                <div class="brand-card-header bg-dark text-white">
+                  <h4>Mitra 1</h4>
+                </div>
+                <div class="brand-card-body">
+                  <div>
+                    <div class="text-value">Rp5.481.599</div>
+                    <div class="text-uppercase text-muted small">Laba 30%</div>
+                  </div>
+                </div>
+                <div class="card-footer px-3 py-2 bg-white">
+                  <a class="btn-block text-muted d-flex justify-content-between align-items-center"
+                    href="overview.html">
+                    <span class="small font-weight-bold">Lihat Detail</span>
+                    <i class="fa fa-angle-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="brand-card">
+                <div class="brand-card-header bg-dark text-white">
+                  <h4>Mitra 2</h4>
+                </div>
+                <div class="brand-card-body">
+                  <div>
+                    <div class="text-value">Rp5.481.599</div>
+                    <div class="text-uppercase text-muted small">Laba 30%</div>
+                  </div>
+                </div>
+                <div class="card-footer px-3 py-2 bg-white">
+                  <a class="btn-block text-muted d-flex justify-content-between align-items-center"
+                    href="overview.html">
+                    <span class="small font-weight-bold">Lihat Detail</span>
+                    <i class="fa fa-angle-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -291,6 +385,39 @@
               <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
                 <button class="btn btn-primary" type="button">Simpan</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="changeModal" tabindex="-1" role="dialog" aria-labelledby="changeModal"
+          aria-hidden="true">
+          <div class="modal-dialog modal-primary" role="document">
+
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Pindahkan Barang</h4>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="" method="post">
+                  <div class="form-group">
+                    <label for="mitra">Pilih Mitra</label>
+                    <select class="form-control" id="mitra" name="mitra">
+                      <option>Mitra 1</option>
+                      <option>Mitra 2</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="qty">Jumlah</label>
+                    <input class="form-control" id="qty" type="number" name="qty" placeholder="5">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                <button class="btn btn-primary" type="button">Pindahkan</button>
               </div>
             </div>
           </div>

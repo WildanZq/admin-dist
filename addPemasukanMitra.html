@@ -145,19 +145,25 @@
       </ol>
       <div class="container-fluid">
         <div class="animated fadeIn">
-          <div class="col-12 col-md-6">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">Tambah Pemasukan</h4>
-                <form action="" method="post">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Tambah Pemasukan</h4>
+              <form action="" method="post" class="row">
+                <div class="col-md-6 col-12">
                   <div class="form-group">
                     <label for="date">Tanggal</label>
                     <input class="form-control" id="date" type="date" name="date">
                   </div>
                   <div class="form-group">
+                    <label for="buyer">Pembeli</label>
+                    <input class="form-control" id="buyer" type="text" name="buyer" placeholder="Jono">
+                  </div>
+                  <div class="form-group">
                     <label for="itemName">Nama Barang</label>
                     <input class="form-control" id="itemName" type="text" name="itemName" placeholder="Panen">
                   </div>
+                </div>
+                <div class="col-md-6 col-12">
                   <div class="form-group">
                     <label for="buyPrice">Harga</label>
                     <div class="input-group">
@@ -181,12 +187,19 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-12 d-flex justify-content-end">
-                    <a class="btn btn-secondary" href="pemasukanMitra.html">Batal</a>
-                    <a class="btn btn-primary ml-2" href="pemasukanMitra.html"><i class="icon-plus"></i> Tambah</a>
+                  <div class="form-group">
+                    <label for="status">Status</label>
+                    <select class="form-control" id="status" name="status">
+                      <option>Sudah Lunas</option>
+                      <option>Belum Lunas</option>
+                    </select>
                   </div>
-                </form>
-              </div>
+                </div>
+                <div class="d-flex justify-content-end col-12">
+                  <a class="btn btn-secondary" href="pemasukanMitra.html">Batal</a>
+                  <a class="btn btn-primary ml-2" href="pemasukanMitra.html"><i class="icon-plus"></i> Tambah</a>
+                </div>
+              </form>
             </div>
           </div>
         </div>

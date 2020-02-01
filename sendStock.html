@@ -33,6 +33,9 @@
       display: block;
       width: 100% !important;
     }
+    .select2-container {
+      margin-top: .4rem;
+    }
   </style>
 </head>
 
@@ -179,35 +182,6 @@
                       <option>Vit C</option>
                     </select>
                   </div>
-                  <div class="form-group">
-                    <label for="itemType">Jenis Barang</label>
-                    <select disabled class="form-control" id="itemType" name="itemType">
-                      <option>Pakan</option>
-                      <option>DOC</option>
-                      <option>Obat</option>
-                      <option>Lainnya</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-6 col-12">
-                  <div class="form-group">
-                    <label for="buyPrice">Harga Beli</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">Rp</span>
-                      </div>
-                      <input disabled class="form-control" id="buyPrice" type="number" name="buyPrice" placeholder="80000">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="sellPrice">Harga Jual</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">Rp</span>
-                      </div>
-                      <input disabled class="form-control" id="sellPrice" type="number" name="sellPrice" placeholder="80000">
-                    </div>
-                  </div>
                   <div class="row">
                     <div class="col-6">
                       <div class="form-group">
@@ -222,13 +196,45 @@
                       </div>
                     </div>
                   </div>
+                </div>
+                <div class="col-md-6 col-12">
+                  <div class="form-group">
+                    <label for="itemType">Jenis Barang</label>
+                    <select disabled class="form-control" id="itemType" name="itemType">
+                      <option>Pakan</option>
+                      <option>DOC</option>
+                      <option>Obat</option>
+                      <option>Lainnya</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="buyPrice">Harga Beli</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Rp</span>
+                      </div>
+                      <input disabled class="form-control" id="buyPrice" type="number" name="buyPrice"
+                        placeholder="80000">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="sellPrice">Harga Jual</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Rp</span>
+                      </div>
+                      <input disabled class="form-control" id="sellPrice" type="number" name="sellPrice"
+                        placeholder="80000">
+                    </div>
+                  </div>
                   <div class="form-group">
                     <label for="totalPrice">Total Harga</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text">Rp</span>
                       </div>
-                      <input disabled class="form-control" id="totalPrice" type="number" name="totalPrice" placeholder="80000">
+                      <input disabled class="form-control" id="totalPrice" type="number" name="totalPrice"
+                        placeholder="80000">
                     </div>
                   </div>
                 </div>
@@ -256,8 +262,8 @@
   <script src="vendors/select2/js/select2.min.js"></script>
   <script>
     $(document).ready(function () {
-        $('.select2').select2();
-      });
+      $('.select2').select2();
+    });
   </script>
 </body>
 
