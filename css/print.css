@@ -1,0 +1,32 @@
+.print {
+    display: none;
+}
+
+@media print {
+    header, .sidebar, .breadcrumb, .no-print, .container-fluid > .animated {
+        width: 0 !important;
+        height: 0 !important;
+    }
+    
+    header, .sidebar, .breadcrumb, .no-print, * {
+        visibility: hidden !important;
+    }
+    
+    .main {
+        padding: 0 !important;
+        margin: 0 !important;
+        visibility: visible !important;
+    }
+    
+    .print {
+        display: block !important;
+    }
+    
+    .print, .print * {
+        visibility: visible !important;
+    }
+    
+    body {
+        background-color: white;
+    }
+}
