@@ -136,37 +136,34 @@
     <main class="main">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="overview.html">Mitra</a>
+          <a href="dashboard.html">Dashboard</a>
         </li>
         <li class="breadcrumb-item">
-          <a href="pengeluaranMitra.html">Pengeluaran</a>
+          <a href="pemasukan.html">Pemasukan</a>
         </li>
         <li class="breadcrumb-item active">Tambah</li>
       </ol>
       <div class="container-fluid">
         <div class="animated fadeIn">
-          <div class="col-12 col-md-6">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">Tambah Pengeluaran</h4>
-                <form action="" method="post">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Tambah Pemasukan</h4>
+              <form action="" method="post" class="row">
+                <div class="col-md-6 col-12">
                   <div class="form-group">
                     <label for="date">Tanggal</label>
                     <input class="form-control" id="date" type="date" name="date">
                   </div>
                   <div class="form-group">
-                    <label for="itemType">Pilih Jenis Barang</label>
-                    <select class="form-control" id="itemType" name="itemType">
-                      <option>Pakan</option>
-                      <option>DOC</option>
-                      <option>Obat</option>
-                      <option>Lainnya</option>
-                    </select>
+                    <label for="buyer">Pembeli</label>
+                    <input class="form-control" id="buyer" type="text" name="buyer" placeholder="Jono">
                   </div>
                   <div class="form-group">
                     <label for="itemName">Nama Barang</label>
-                    <input class="form-control" id="itemName" type="text" name="itemName" placeholder="Barang">
+                    <input class="form-control" id="itemName" type="text" name="itemName" placeholder="Panen">
                   </div>
+                </div>
+                <div class="col-md-6 col-12">
                   <div class="form-group">
                     <label for="buyPrice">Harga</label>
                     <div class="input-group">
@@ -180,22 +177,30 @@
                     <div class="col-6">
                       <div class="form-group">
                         <label for="qty">Jumlah</label>
-                        <input class="form-control" id="qty" type="number" name="qty" placeholder="1">
+                        <input class="form-control" id="qty" type="number" name="qty" placeholder="500">
                       </div>
                     </div>
                     <div class="col-6">
                       <div class="form-group">
                         <label for="unit">Satuan</label>
-                        <input class="form-control" id="unit" type="text" name="unit" placeholder="buah">
+                        <input class="form-control" id="unit" type="text" name="unit" placeholder="ekor">
                       </div>
                     </div>
                   </div>
-                  <div class="d-flex justify-content-end">
-                    <a class="btn btn-secondary" href="pengeluaranMitra.html">Batal</a>
-                    <a class="btn btn-primary ml-2" href="pengeluaranMitra.html"><i class="icon-plus"></i> Tambah</a>
+                  <div class="form-group">
+                    <label for="status">Status</label>
+                    <select class="form-control" id="status" name="status">
+                      <option>Sudah Lunas</option>
+                      <option>Belum Lunas</option>
+                    </select>
                   </div>
-                </form>
-              </div>
+                </div>
+                <div class="d-flex justify-content-end col-12">
+                  <a class="btn btn-secondary" href="pemasukan.html">Batal</a>
+                  <a class="btn btn-primary ml-2" href="pemasukan.html"><i class="icon-plus"></i>
+                    Tambah</a>
+                </div>
+              </form>
             </div>
           </div>
         </div>
